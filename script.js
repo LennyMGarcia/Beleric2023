@@ -1,92 +1,105 @@
 
-let reviews = [
+window.addEventListener('DOMContentLoaded', function () {
+    showSliderImg(sliderImg);
+    showTasteImg(tasteImg)
+})
+
+
+
+let tasteImg = [
     'https://www.course-api.com/images/people/person-1.jpeg',
     'https://www.course-api.com/images/people/person-2.jpeg',
-    'https://www.course-api.com/images/people/person-4.jpeg',
     'https://www.course-api.com/images/people/person-3.jpeg'
-    
+
 ];
 
-const sliderPrincipalImage = document.getElementById("slider-principal-image");
-const sliderAnotherImageFirst = document.getElementById("slider-another-image-first");
-const sliderAnotherImageSecond = document.getElementById("slider-another-image-second");
-const sliderAnotherImageThird = document.getElementById("slider-another-image-third");
+let currentTasteIndex = 0;
 
-const images = document.querySelectorAll(".images")
-
-const SliderPrevBtn = document.querySelector(".slider-prev-button");
-const sliderNextBtn = document.querySelector(".slider-next-button");
-
+const tasteImages = document.querySelectorAll(".taste-image")
 const TastePrevBtn = document.querySelector(".taste-prev-button");
 const TasteNextBtn = document.querySelector(".taste-next-button");
 
-let indiceActual = 0;
-let listOfImage = [];
-
-
-window.addEventListener('DOMContentLoaded', function () {
-    console.log(reviews);
-    reviews[indiceActual];
-    showPerson(reviews);
-})
-
-function showPerson(imgs) {
+function showTasteImg(imgs) {
     const newArrayOfImages = [...imgs];
 
-    images.forEach(function (image, index) {
-        indiceActual = index
-        const setsrc = newArrayOfImages[indiceActual]
+    tasteImages.forEach(function (image, index) {
+        currentTasteIndex = index
+        const setsrc = newArrayOfImages[currentTasteIndex]
         image.setAttribute('src', setsrc)
-     })
-
-
+    })
 }
 
-sliderNextBtn.addEventListener('click', function(){
-    reviews = reorganizarArrayHaciaAdelante(reviews);
-  indiceActual = (indiceActual + 1) % reviews.length;
-  console.log("Elemento actual:", reviews[indiceActual]);
+TasteNextBtn.addEventListener('click', function () {
+    tasteImg = rearrangeArrayForward(tasteImg);
+    currentTasteIndex = (currentTasteIndex + 1) % tasteImg.length;
+    console.log("Elemento actual:", tasteImg[currentTasteIndex]);
 
-    showPerson(reviews);
-  });
+    showTasteImg(tasteImg);
+});
 
-  SliderPrevBtn.addEventListener('click', function(){
-    reviews = reorganizarArrayHaciaAtras(reviews);
-    indiceActual = (indiceActual - 1 + reviews.length) % reviews.length;
-    console.log("Elemento actual:", reviews[indiceActual]);
+TastePrevBtn.addEventListener('click', function () {
+    tasteImg = rearrangeArrayBackward(tasteImg);
+    currentTasteIndex = (currentTasteIndex - 1 + tasteImg.length) % tasteImg.length;
+    console.log("Elemento actual:", tasteImg[currentTasteIndex]);
 
-    showPerson(reviews);
-  });
+    showTasteImg(tasteImg);
+});
 
-  function reorganizarArrayHaciaAdelante(array) {
-    const newArray = [...array];
-    const ultimoElemento = newArray.pop();
-    newArray.unshift(ultimoElemento);
-    return newArray;
-  }
 
-  function reorganizarArrayHaciaAtras(array) {
-    const newArray = [...array];
-    const primerElemento = newArray.shift();
-    newArray.push(primerElemento);
-    return newArray;
-  }
 
-/*const elementos = [1, 2, 3, 4]; // Tu array de elementos
-let indiceActual = 0; // Índice actual en el array reorganizado
+let sliderImg = [
+    'https://www.course-api.com/images/people/person-1.jpeg',
+    'https://www.course-api.com/images/people/person-2.jpeg',
+    'https://www.course-api.com/images/people/person-1.jpeg',
+    'https://www.course-api.com/images/people/person-3.jpeg'
 
-function reorganizarArray(array) {
-  const newArray = [...array];
-  const ultimoElemento = newArray.pop();
-  newArray.unshift(ultimoElemento);
-  return newArray;
+];
+
+let currentSliderIndex = 0;
+
+const SliderImages = document.querySelectorAll(".slider-images")
+const SliderPrevBtn = document.querySelector(".slider-prev-button");
+const sliderNextBtn = document.querySelector(".slider-next-button");
+
+function showSliderImg(imgs) {
+    const newArrayOfImages = [...imgs];
+
+    SliderImages.forEach(function (image, index) {
+        currentSliderIndex = index
+        const setsrc = newArrayOfImages[currentSliderIndex]
+        image.setAttribute('src', setsrc)
+    })
 }
 
-// Ejemplo de cómo usar la función con un botón para avanzar al siguiente elemento
-const botonSiguiente = document.getElementById('boton-siguiente'); // Reemplaza 'boton-siguiente' con el ID de tu botón
+sliderNextBtn.addEventListener('click', function () {
+    sliderImg = rearrangeArrayForward(sliderImg);
+    currentSliderIndex = (currentSliderIndex + 1) % sliderImg.length;
+    console.log("Elemento actual:", sliderImg[currentSliderIndex]);
 
-botonSiguiente.addEventListener('click', () => {
-  elementos = reorganizarArray(elementos);
-  indiceActual = (indiceActual + 1) % elementos.length;
-  console.log("Elemento actual:", elementos[indiceActual]);
-});*/
+    showSliderImg(sliderImg);
+});
+
+SliderPrevBtn.addEventListener('click', function () {
+    sliderImg = rearrangeArrayBackward(sliderImg);
+    currentSliderIndex = (currentSliderIndex - 1 + sliderImg.length) % sliderImg.length;
+    console.log("Elemento actual:", sliderImg[currentSliderIndex]);
+
+    showSliderImg(sliderImg);
+});
+
+
+
+function rearrangeArrayForward(array) {
+    const newArray = [...array];
+    const lastElement = newArray.pop();
+    newArray.unshift(lastElement);
+    return newArray;
+}
+
+function rearrangeArrayBackward(array) {
+    const newArray = [...array];
+    const firstElement = newArray.shift();
+    newArray.push(firstElement);
+    return newArray;
+}
+

@@ -55,9 +55,9 @@ BELERIC PROJECT
 body{
     width: 100%;
     background-color: #fb8c9c;
-    
     color: white;
     overflow-x: hidden;
+    font-family: 'Times New Roman', Times, serif;
 }
 h1{
     color: white;
@@ -70,7 +70,7 @@ h1{
 
 .b-header{
     width: 100%;
-    background-color: #fb8c9c;
+    background-color: #9face4;
     position: fixed;
     display: grid;
     grid-template-columns: repeat(6, 0.1fr);
@@ -84,11 +84,19 @@ h1{
   margin: 10px;
   padding-right: 600px;
   padding-left: 50px;
+  font-size: 24px;
 }
 .b-header a{
     margin: 10px;
     color:white;
     text-decoration: none;
+    transition: 0.2s;
+}
+
+.b-header a:hover{
+    text-decoration: wavy;
+    color: #fb8c9c;
+    font-size: 20px;
 }
 
 .img-below-header img{
@@ -120,8 +128,8 @@ h1{
 }
 
 #about img{
-    width: 500px;
-    height: 300px;
+    width: 350px;
+    height: 450px;
 }
 
 .about-text{
@@ -156,7 +164,7 @@ h1{
 }
 
 .slider-principal-card-img img{
-    height: 100%;
+    height: 285px;
     width: 100%;
 }
 
@@ -236,8 +244,12 @@ h1{
 }
 
 .song-first img{
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
+    padding: 10px;
+    padding-top: 15px;
+    padding-left: -25px;
+    padding-right: -25px;
 }
 
 .song-first-text h2{
@@ -252,7 +264,6 @@ h1{
 
 .song-second{
     margin: 50px;
-    border-top-right-radius: 10%;
     width: 1000px;
     height: 285px;
     display: grid;
@@ -262,11 +273,16 @@ h1{
     justify-content: center;
     border-bottom-left-radius: 10%;
     z-index: 2;
+    
 }
 
 .song-second img{
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
+    padding: 10px;
+    padding-top: 15px;
+    padding-left: -25px;
+    padding-right: -25px;
 }
 
 .song-second-text h2{
@@ -293,9 +309,15 @@ h1{
 .taste-items figure{
     display: grid;
     justify-content: center;
+    text-align: center;
     background-color: #fb7c8c;
     width:260px;
+    height:300px ;
     box-shadow: 0 10px 5px #fc6e81;
+}
+
+.taste-items figcaption{
+    font-size: 24px;
 }
 
 .taste-content img{
@@ -308,7 +330,7 @@ h1{
     background-color: white;
     width: 65px;
     height: 50px;
-    margin-top: 225px;
+    margin-top: 250px;
     box-shadow: 0 10px 5px #fc6e81;
     margin-left:-10px;
 }
