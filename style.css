@@ -1,0 +1,332 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+====================================
+BELERIC PROJECT
+====================================
+*/
+body{
+    width: 100%;
+    background-color: #fb8c9c;
+    
+    color: white;
+    overflow-x: hidden;
+}
+h1{
+    color: white;
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 75px;
+    font-size: xx-large;
+}
+
+
+.b-header{
+    width: 100%;
+    background-color: #fb8c9c;
+    position: fixed;
+    display: grid;
+    grid-template-columns: repeat(6, 0.1fr);
+    column-gap: 30px; 
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    z-index: 10;
+}
+
+.b-header h2{
+  margin: 10px;
+  padding-right: 600px;
+  padding-left: 50px;
+}
+.b-header a{
+    margin: 10px;
+    color:white;
+    text-decoration: none;
+}
+
+.img-below-header img{
+    margin-top: 40px;
+    border-radius: 10px;
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+}
+.about-content{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 100px;
+   text-align: justify;
+   z-index: 2;
+}
+
+.about-content::after{
+    position: absolute;
+    content: "";
+    width: 300px;
+    height: 300px;
+    background-color: #fb7c8c;
+    transform: translate(1000px, 100px);
+    z-index: -1;
+
+}
+
+#about img{
+    width: 500px;
+    height: 300px;
+}
+
+.about-text{
+    
+    margin-left: 150px;
+}
+
+.slider-card{
+    display: flex;
+    justify-content: center;
+}
+
+.slider-principal-card{
+    border-top-right-radius: 10%;
+    width: 1000px;
+    height: 285px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    background-color: #fc6e81;
+    justify-content: center;
+    z-index: 2;
+}
+
+.slider-principal-card::after{
+    content: "";
+    width: 300px;
+    height: 300px;
+    transform: translate(-200px, -400px);
+    background-color: #fb7c8c;
+    z-index: -1;
+}
+
+.slider-principal-card-img img{
+    height: 100%;
+    width: 100%;
+}
+
+.slider-principal-card-text{
+    margin: 20px;
+}
+
+.slider-principal-card-text h2{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.slider-principal-card-text p{
+    margin-bottom: 10px;
+}
+
+.slider-button-cards{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.slider-button{
+    margin-top: 75px;
+    display: grid;
+    grid-template-columns: repeat(1, 0.1fr);
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+.slider-button button{
+    background-color:  #fc6e81;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    color:white;
+    transition: 0.2s;
+}
+
+.slider-button button:hover{
+    color: #fb7c8c;
+    background-color: white;
+}
+
+.slider-another-cards{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+.slider-another-cards img{
+    width: 200px;
+    height: 200px;
+}
+
+.song-first-content{
+    display: flex;
+    justify-content: center;
+}
+
+.song-second-content{
+    display: flex;
+    justify-content: center;
+}
+
+.song-first{
+    border-top-right-radius: 10%;
+    width: 1000px;
+    height: 285px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    background-color: #fc6e81;
+    justify-content: center;
+    z-index: 2;
+}
+
+.song-first img{
+    width: 100%;
+    height: 100%;
+}
+
+.song-first-text h2{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.song-first-text h2, .song-first-text p{
+    
+    margin: 30px;
+}
+
+.song-second{
+    margin: 50px;
+    border-top-right-radius: 10%;
+    width: 1000px;
+    height: 285px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    background-color: #fc6e81;
+    justify-content: center;
+    border-bottom-left-radius: 10%;
+    z-index: 2;
+}
+
+.song-second img{
+    width: 100%;
+    height: 100%;
+}
+
+.song-second-text h2{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.song-second-text h2, .song-second-text p{
+    margin: 30px;
+}
+.taste-content{
+    display: flex;
+    justify-content: center;
+    margin-left: 80px;
+}
+.taste-items{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    
+}
+
+.taste-items figure{
+    display: grid;
+    justify-content: center;
+    background-color: #fb7c8c;
+    width:260px;
+    box-shadow: 0 10px 5px #fc6e81;
+}
+
+.taste-content img{
+    margin-top: 5px;
+    width: 250px;
+    height: 250px;
+}
+
+.taste-button{
+    background-color: white;
+    width: 65px;
+    height: 50px;
+    margin-top: 225px;
+    box-shadow: 0 10px 5px #fc6e81;
+    margin-left:-10px;
+}
+
+.taste-button button{
+    background-color: transparent;
+    color: #fb8c9c;
+    border: none;
+    width: 30px;
+    font-size:20px;
+    
+}
+
+.taste-next-button{
+    margin-left: 35px;
+}
+
+.b-footer{
+    height: 150px;
+
+}
