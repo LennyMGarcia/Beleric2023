@@ -129,12 +129,16 @@ h1{
 
 #about img{
     width: 350px;
-    height: 450px;
+    height: 400px;
 }
 
 .about-text{
     
     margin-left: 150px;
+}
+
+.about-text p{
+    font-size: 18px;
 }
 
 .slider-card{
@@ -342,6 +346,10 @@ h1{
     width: 30px;
     font-size:20px;
     
+}
+
+.taste-button button:hover{
+    color: #9face4;
 }
 
 .taste-next-button{
